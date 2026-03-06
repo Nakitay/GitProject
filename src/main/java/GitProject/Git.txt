@@ -1,0 +1,34 @@
+What is Git?
+
+Used by programmers/developers to communicate and manage the changes in source code, files, and folders.
+
+GitHub
+Hosting service
+Cloud based git repositories
+Provides many collaboration features
+
+Git Repositories:
+Remote Repository: on the hosting service
+Local Repository: on my computer
+
+
+Git Life Cycle
+(Working Directory)  Add  (Staging Area)Commit (Local Repository)Push Remote Repository  Fetch  Local Repository -----------(Working Directory)
+
+GitHub  Update Project on Working Directory
+
+
+Working Directory --- Project folder tracked by Git
+Staging Area --- Temporary holding space
+Local Repository – Can be safe on the local computer
+Remote Repository is the last step (final step where we share the project with my team)
+
+Fetch And Git Pull
+
+Git Fetch: Checks for updates in the remote repository.
+       Downloads updates and merges them into your local repository
+       Updates are stored in the temporary area
+
+Git Pull: Automatically updates the latest changes. Fetches updates and merges them into your local repository.
+            Fetches updates and applies them to your local repository
+
