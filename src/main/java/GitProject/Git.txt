@@ -32,3 +32,16 @@ Git Fetch: Checks for updates in the remote repository.
 Git Pull: Automatically updates the latest changes. Fetches updates and merges them into your local repository.
             Fetches updates and applies them to your local repository
 
+-------------------------------------------------------------------------------------
+Git Clone
+A process of creating a copy of a git remote repository to the local machine
+Includes the entire history and all files
+Creates a working directory
+
+How Git Clone Works?
+Copies the remote repository
+Creates a local repository
+Sets up a connections to the remote repository
+
+
+
