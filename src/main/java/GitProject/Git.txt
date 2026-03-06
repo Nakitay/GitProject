@@ -13,15 +13,16 @@ Local Repository: on my computer
 
 
 Git Life Cycle
-(Working Directory)  Add  (Staging Area)Commit (Local Repository)Push Remote Repository  Fetch  Local Repository -----------(Working Directory)
+(Working Directory)  Add -> (Staging Area)Commit->
+(Local Repository)Push->Remote Repository -> Fetch -> Local Repository ----------->(Working Directory)
 
-GitHub  Update Project on Working Directory
+GitHub ----->>>>> Update Project on Working Directory
 
 
 Working Directory --- Project folder tracked by Git
 Staging Area --- Temporary holding space
 Local Repository – Can be safe on the local computer
-Remote Repository is the last step (final step where we share the project with my team)
+Remote Repository --> is the last step (final step where we share the project with my team)
 
 Fetch And Git Pull
 
