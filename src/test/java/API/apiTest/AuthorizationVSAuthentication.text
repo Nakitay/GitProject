@@ -1,0 +1,125 @@
+Authentication and Authorization are two important security concepts in APIs.
+
+1. Authentication — Who You Are
+Authentication means verifying the identity of the user.
+
+Example:
+When you log into an application:
+    username + password
+
+Example in APIs:
+     API Key
+     Token
+     Username + Password
+     OAuth
+
+2. Authorization — What You Can Do
+Authorization means checking what actions you are allowed to perform.
+In simple words:
+      What permissions you have
+
+User roles:
+      Admin
+      User
+      Guest
+-------------------------------------------------------------
+| Authentication        | Authorization    |
+| --------------------- | ---------------- |
+| Who you are           | What you can do  |
+| Identity verification | Permission check |
+| Login step            | Access control   |
+| Happens first         | Happens after    |
+-----------------------------------------------------------
+5. API Status Codes
+Status	Meaning
+401	Unauthorized (authentication failed)
+403	Forbidden (no permission)
+
+Example:
+401 → Wrong token / not logged in
+403 → Logged in but not allowed
+
+-----------------------------------------------------------------
+Basic Authentication
+
+
+ is a method for an HTTP user  to provide a user name and password when making a request.
+ In basic HTTP authentication, a request contains a header field in the form of Authorization:
+ Basic<credentials>, where credentials is the Base64 encoding of username and password joined by single colon:
+
+----------------------------------------------------------------------
+BOOKIT API -JWT Token
+
+JWT - is JSON WEB Token
+
+Tokens are used so the user does not need to send their username and password
+ with every request. After authentication, the server generates a token that can
+ be used for subsequent requests, improving both security and performance.
+he reason APIs use tokens instead of sending username/password every time comes
+ down to security, performance, and control. Here are the 3 main reasons
+
+----------------------------------------------------------------------
+API keys
+
+| Feature    | API Key              | Bearer Token   |
+| ---------- | -------------------- | -------------- |
+| Security   | Basic                | More secure    |
+| Expiration | Usually long         | Often short    |
+| Generated  | Developer / platform | Login endpoint |
+| Example    | Google Maps API      | Bookit `/sign` |
+
+
+An API key is another way to authenticate when calling an API.
+It tells the server who is making the request and whether they are allowed to access the API.
+
+Rest Assured example:
+
+given()
+        .header("x-api-key", "4f7a8c9d10abc123")
+.when()
+        .get("/api/users");
+
+
+
+Example API Key Test in Rest Assured:
+
+       given()
+               .header("x-api-key","123456789")
+               .accept(ContentType.JSON)
+       .when()
+               .get("/api/data")
+       .then()
+               .statusCode(200)
+               .log().all();
+
+-------------------------cURL-------------------------------
+cURL is a command-line tool used to send HTTP requests to APIs.
+It supports multiple protocols and allows testers or
+developers to test endpoints, send headers,
+authentication tokens, and request bodies directly from the terminal.
+
+We use cURL to send API requests from the command line without needing
+tools like Postman.
+ It is mainly used for quick testing and debugging APIs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

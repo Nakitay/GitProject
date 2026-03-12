@@ -1,0 +1,112 @@
+~1) How to verify Response?
+1) Contains_ It is not suggested
+2) response.path ("GPATH Syntax")
+3)jsonPath.getString("Gpath Syntax")
+4) Hamcrest Matchers
+5) DESERIALIZATION
+
+Deserialization it is converting JSON to Java Collections/POJO(That Java object = POJO.)
+We need to add dependency JACKSON - DATABIND. it's called as ObjectMapper, or JSONParser
+It will help us to do convert JSON to Java Collections/Pojo
+JSON to JAVA Collection
+
+1- JSON to JAva Collections --> (list,map)
+2- JSON to Pojo (custom Classes)
+
+   ---------------------MAP-----------------------
+     --RESPONSE.As()
+             response.as() → Full Response Deserialization
+             Map<String, Object> spartanMAp = response.as(Map.class)
+             as() --> will do deserialization
+             as()--> converts the ENTIRE response body into a Java object.
+
+     --JSONPATH.GETMAP()
+        First creates a JsonPath parser, then extracts only what you want.
+       Jsonpath jsonpath  =   response.jsonPath();
+       jsonpath.getMap();
+
+       Characteristics:
+       Deserializes whole response
+       Faster for simple cases
+       No navigation inside JSON
+       Direct conversion
+
+----------------------List-------------------------
+   --RESPONSE.AS()
+   List <Map<String, Object>> allSpartansAsMAp =  response.as(List.class);
+
+   --JSONPATH.GETLIST()
+    List <Map<String, Object>> allSpartansAsMAp =  jsonPath.getList();
+
+Characteristics:
+Allows navigation inside JSON
+Extract partial data
+Supports filtering
+More flexible
+
+---------------------------MAP ---> GPATHSYNTAX-------------------------------------
+response.as() converts the entire response into a Java object,
+while jsonPath allows navigation inside JSON using GPath syntax like [0] to retrieve partial data.
+
+--RESPONSE.AS()
+     response.as() --> It will not allow to put GPATH SYNTAX to retrieve partial JSON OBJECT
+
+--JSONPATH.GETMAP()
+    JsonPath jp = response.jsonPath();
+   Map<String, Object> spMap =  jp.getMAp("[0]");
+
+
+
+-------------------------------------JSON TO POJO(Custom classes)--------------------------------
+What POJO Really Means
+POJO (Plain Old Java Object) is: 👉 A simple Java class used to hold data.
+It has:variables (fields)/getters/setters/sometimes constructors
+
+public class SSpartan{
+    private ]int id;
+    private String name;
+    private String gender;
+    private long phone;
+
+//getter + setter
+// ToString
+//Constructor
+
+
+---------------Lombok--------------
+
+✅ 1️⃣ Add Lombok Dependency (pom.xml)
+Lombok automatically generated:
+
+getId()
+setId()
+getName()
+setName()
+toString()
+You just don’t see them
+
+Simple Mental Model
+Without Lombok:
+You manually write 50 lines of getters/setters.
+
+With Lombok:
+You write 3 annotations.
+Cleaner framework. Same functionality.
+
+I use Lombok to reduce boilerplate code in POJO classes while still
+supporting deserialization
+through automatically generated getters and setters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -44,5 +44,14 @@ Copies the remote repository
 Creates a local repository
 Sets up a connections to the remote repository
 
+------------------------------------------------
+Git RollBack
+Restores files to their last committed state.
+Works for uncommitted changes
+Can rollback individual files or the entire project
+
+--------------------------------------------------
+Undo Commit
+Also you can just share your project with git your project under the CVS
 
 

@@ -1,0 +1,123 @@
+Types of API :
+. What is an API?
+• API stands for Application Programming Interface.
+• It allows different software systems to communicate with each other.
+• It acts like a messenger that takes requests from a client and returns responses from a server.
+
+
+
+
+SOAP---->(Simple  Object Access Protocol)--> happens only in XML format
+                 Request XML format
+                 Response XML format
+Rest-----> ( Representation State of Transfer)--> Uses HTTP protocol. When you request for
+data is sent to a REST API, APIs can return messages in variety of Format.:
+                                      HTML, XML, plain text, and JSON
+JSON(JavaScript object notation) it can be read by any programming language
+
+                  {
+                  "id" : 100
+                  "name" : "Nargiza"
+                  "gender" : "female"
+                  "phone" : 7204874932
+
+What is API testing?
+In API testing I write tests for checking business logic and functional correctness
+API is connectivity
+
+
+Tools:
+Rest-assured
+Postman
+Java
+
+-------------------Types of HTTP Requests/Method ----------------------
+
+POST ---> sends new data to specified source --->CREATE
+GET --->  Retrieves tha data from sourse   --->READ
+PUT/PATCH---> update info ----UPDATE
+DELETE---> Removes data -----DELETE
+
+
+-------------------API documents ---------------------
+Swagger --Most Popular one
+Postman Doc
+
+GET /api/spartans
+POST /api/spartans
+GET /api/spartans/{id}
+PUT/api/spartans/{id}
+
+--------------------What Swagger is (simple)-------------------
+Swagger is basically an API manual + testing page.
+It shows:All endpoints (GET, POST, PUT, DELETE)
+Request body format
+Headers (auth tokens, etc.)
+Status codes
+1️⃣ Developers create Swagger
+Backend developers generate Swagger/OpenAPI docs when they build APIs.
+2️⃣ QA uses Swagger
+QA engineers use Swagger to: See endpoints
+understand request body
+check headers
+verify response format
+test status codes
+
+-----------Postman----------
+It helps to test REST API urls
+Its popular for developers and QA
+We can use manual and automation
+It uses Chai library to write test cases
+
+----------Headers---------------
+It's part of URL. Additional information about request and response
+It works like a map key&value structure
+
+What se send with headers?
+Content  Type(application/json)
+Accept  (application/json, application/xml)
+Credentials, Authentication(username, password, different types)
+
+
+----------------Parameters------------------
+Option you can pass with endpoints
+
+Types of Parameters
+   1.Path parameters ->   /student/{id} -->is path Parameter //used to  identify single resource
+   2.Query parameters ->  /A key value usually used for filter the result
+                             ?--> means end of the URL
+                             &--> add another query para, separate query param
+
+PATH → WHERE (which resource)
+QUERY → HOW (filter/search)
+JSONPATH → READ response data
+
+
+
+Always read Swagger documentation
+
+You do NOT need extends to use a class.
+You simply create an object of the POJO class.
+
+In Rest Assured, log().all() means:
+Print everything about the request or response in the console.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

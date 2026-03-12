@@ -1,0 +1,74 @@
+Hamcrest Matchers are assertion tools used with Rest Assured to validate API
+responses in a readable way.
+ In my First Bank project, I used them to verify status codes, response fields,
+ and data validation such as loan status, IDs, and response values during automation testing.
+
+
+ -----------------------------------------------------------------------------------------
+ Correct — Hamcrest Matchers are NOT for output.
+
+ They are for verification (assertions), not printing.
+
+
+-------------------------------------------------------------------------------------------
+Hamcrest Matchers are a library used in testing to make assertions more readable and flexible.
+Instead of writing basic checks like:
+Assert.assertEquals(200, response.getStatusCode());
+you write:
+assertThat(response.getStatusCode(), equalTo(200));
+
+Why we use Hamcrest Matchers
+They help to:
+Make assertions readable
+Validate API responses easily
+Perform complex validations
+Improve test maintenance
+Example benefits:
+clearer failures
+better reporting
+cleaner code
+
+✅ Common Hamcrest Matchers
+Matcher	Purpose:
+equalTo()	        exact match
+not()	            negative check
+hasItem()	        list contains value
+containsString()	text validation
+greaterThan()	    numeric comparison
+nullValue()	        check null
+notNullValue()	    check not null
+
+✅ Realistic Example from First Bank
+Loan Status Validation
+given()
+    .pathParam("id", 101)
+.when()
+    .get("/loan/{id}")
+.then()
+    .statusCode(200)
+    .body("status", equalTo("Approved"))
+    .body("loanId", notNullValue())
+    .body("amount", greaterThan(0));
+
+What you validated:
+API success ✅
+correct loan status ✅
+ID generated ✅
+valid amount ✅
+
+
+What is extract() in Rest Assured?-----------------------
+
+extract() is used to take data from the API response so you can use it later in your test.
+
+👉 It converts the response into something you can store in a variable.
+✅ Why we use extract()
+
+You use it when you need:
+response body later
+ID for next request
+token for authentication
+data chaining between APIs
+Very common in real automation.
+
+

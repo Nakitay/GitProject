@@ -1,0 +1,36 @@
+🔹 Example Using Jackson
+ObjectMapper mapper = new ObjectMapper();
+
+Spartan spartan = new Spartan("Nargiza", "Female", 1234567890L);
+
+String json = mapper.writeValueAsString(spartan);
+System.out.println(json);
+
+Output:
+
+{
+ "name":"Nargiza",
+ "gender":"Female",
+ "phone":1234567890
+}
+During serialization, RestAssured uses the
+Jackson library to convert a Java object into JSON.
+Jackson inspects the POJO using reflection,
+reads its fields through getters, and maps them into JSON key-value pairs.
+The generated JSON is then sent as the HTTP request body.
+----------------------------------------------------------
+We use HashMap
+when we want to create a JSON request dynamically without creating a POJO class.
+Why Use HashMap Instead of POJO?
+1️⃣ Quick and simple
+You don’t need to create a class.
+
+2️⃣ Good for dynamic data
+If fields change often.
+
+3️⃣ Useful for small API tests
+
+Simple Rule
+
+POJO → large frameworks
+HashMap → quick request building
